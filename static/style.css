@@ -1,0 +1,352 @@
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+
+.begin {
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: clamp(1rem, 2rem, 2.25rem);
+}
+
+.end {
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+.navbar {
+    padding: 0.1rem 6%;
+    margin-bottom: 0;
+    position: fixed;
+    width: 100%;
+    margin-top: 0px;
+}
+
+body{
+    margin: 0;
+}
+
+.navtypo {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.nav-end
+{
+    height: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.container 
+{
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 35px;
+    display: inline-block;
+}
+
+.inputbar
+{
+    border-radius: 10px;
+    width: 100%;
+    height: 45px;
+    background-color: #F0F0F0;
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+.horizontal-image 
+{
+    width: 50px; 
+    height: 50px;
+    margin-right: 10px; 
+    border-radius: 50%;
+}
+
+.flex-container {
+    display: flex; /* Set the container as a flex container */
+    align-items: center; /* Align items vertically in the center */
+}
+
+
+.fullname {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+input[type="file"] {
+    display: none;
+    }
+    /* Optional: Add some hover and active effects for better user experience */
+label#uploadLabel:hover {
+    background-color: #2980b9;
+    }
+
+label#uploadLabel:active {
+    background-color: #1f618d;
+    }
+
+.post-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.post-header {
+    display: flex;
+}
+.post-username {
+    font-weight: bold;
+}
+.post-content {
+    word-wrap: break-word;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    margin-top: -20px;
+}
+.post-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+.post-image 
+{
+    max-width: 100%;
+}
+.post-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.post-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #4b4f56;
+}
+.post-actions button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.vibe-button {
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.comment-button {
+    color: #007bff;
+}
+
+.post-actions {
+    display: block;
+}
+
+.belowtext {
+    font-weight: 400;
+    color: gray;
+    margin-top: -13px;
+    text-align: left;
+}
+.post-actions span {
+    margin-right: 10px; /* Adjust the margin value as per your preference */
+}
+.username {
+    text-align: left;
+}  
+
+.year, .register, .login 
+{
+    margin-top: 100px;
+}
+
+.strong
+{
+    margin-left: -10px;
+}
+
+.comment-add
+{
+    resize: none;
+    border: none;
+    height:30px;
+    outline: none;
+    width: 100%;
+    position: relative;
+}
+
+.comment-section
+{
+    display: block;
+    margin-top: 10px;
+}
+
+.vibe-comment
+{
+    display: flex;
+}
+
+.comment_area, .most_recent {
+    display: flex;
+}
+
+.comment-username {
+    margin-right: 5px;
+    color: #c04040;
+    font-weight: bold;
+}
+
+#maroon {
+    color: #c04040;
+}
+.maroon {
+    color: #c04040;
+}
+.comment_div
+{
+    display: block;
+}
+
+.comment_details
+{
+    display: flex;
+    gap: 5px;
+}
+
+.user_details
+{
+    display: block;
+}
+.comment_text
+{
+    font-size: medium;
+    text-align: left;
+}
+.comment_picture
+{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.other_details
+{
+    display: flex;
+    gap: 5px;
+    margin-top: -20px;
+    font-weight: 400;
+    color: gray;
+}
+.comment_username
+{
+    text-align: left;
+    font-weight: bold;
+    margin-top: -5px;
+    color: #c04040;
+}
+.displayComments
+{
+    margin-top: 5px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: #c04040;
+}
+
+.disapear
+{
+    display: none;
+}
+
+/* Add this CSS to your stylesheet */
+#search-results {
+    position: absolute;
+    max-width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1;
+    display: none;
+    border-radius: 10px;
+}
+
+.top 
+{
+    margin-top: -45px;
+}
+
+.block
+{
+    display: block;
+}
+
+.navpicture
+{
+    height: 30px;
+}
+
+.p_container 
+{
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 35px;
+}
+
+.personal_details
+{
+    max-width: 400px;
+    display: block;
+    max-height: 600px;
+}
+
+.details 
+{
+    margin-top: 20px;
+}
+
+#profile_img 
+{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.fullname
+{
+    font-size: large;
+    font-weight: bold;
+}
+
+
+.post_header
+{
+    display: flex;
+    justify-content: space-between;
+}
