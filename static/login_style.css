@@ -15,13 +15,12 @@ body {
 
 header {
     background-color: #800000; /* Maroon background */
-    padding: 20px;
-    text-align: center;
+    padding: 5px;
 }
 
 .logo img {
-    width: 150px;
-    height: auto;
+    width: 60px;
+    height: 60px;
 }
 
 .signin {
@@ -60,9 +59,9 @@ h2 {
 }
 
 .links a {
-    color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .links a:hover {
