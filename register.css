@@ -1,0 +1,152 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.flex-container {
+    display: flex;
+    background-color: rgb(244, 232, 244);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container {
+    padding: 20px;
+    width: 410px;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+#comm{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+
+.entries {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="fname"] {
+    position: relative; /* Set the input field as the relative positioning context */
+    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+input[type="lname"] {
+    position: relative; /* Set the input field as the relative positioning context */
+    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 49%;
+    left: 210px;
+    bottom: 38px;
+}
+
+input[type="email"] {
+    position: relative; /* Set the input field as the relative positioning context */
+    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 35px;
+}
+
+input[type="tel"] {
+    position: relative; /* Set the input field as the relative positioning context */
+    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 30px;
+}
+
+input[type="password"] {
+    position: relative; /* Set the input field as the relative positioning context */
+    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 25px;
+}
+
+.mj {
+    margin-top: -20px;
+}
+#major {
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ccc;
+    width: 100%;
+}
+
+.yg {
+    margin-top: 4px;
+}
+
+#yrg {
+    width: 20%;
+}
+#DoB {
+    margin-top: 8px;
+}
+#dob {
+    margin-bottom: 5px;
+}
+
+.male {
+    display: inline-block;
+    margin-right: 2px; /* Adjust as needed for spacing */
+}
+
+.female {
+    display: inline-block;
+    margin-right: 2px; /* Adjust as needed for spacing */
+}
+
+input[type="radio"] {
+    display: inline-block;
+    margin-right: 5px; /* Adjust as needed for spacing */
+    vertical-align: middle; /* Aligns the radio buttons vertically with the labels */
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: maroon;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(177, 36, 36);
+}
+
+#rd {
+    text-align: center;
+}
