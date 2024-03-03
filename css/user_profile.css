@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("Ashesi\'s_Archer_Cornfield_Courtyard.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+
+    header {
+        background-color: maroon;
+        color: #fff;
+        padding: 8px;
+        width: 100%;
+        height: 7%;
+        position: fixed; 
+        top: 0;
+        z-index: 1; 
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    img {
+        width: 40px; 
+        height: auto;
+        margin-left: 10px; 
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-left: 10px;
+        order: 0;
+    }
+
+    .profile-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    }
+    
+    .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    }
+
+    .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    .profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+
+    .navigation {
+    display: flex;
+    margin-bottom: 20px;
+    }
+
+    .navigation a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    }
+
+    .navigation a:hover {
+    background-color: #f0f0f0;
+    }
+
+    .user-info {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    }
+
+    .edit-bio {
+    margin-top: 10px;
+    text-align: center;
+    }
+
+    .edit-bio button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: maroon;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    }
+
+    .picture-section {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+    .picture {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    }
+
+    .picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    }
+
+    .delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: maroon;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    }
+
+    .add-picture-button {
+    margin-top: 20px;
+    background-color: maroon;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    }
+
+    .events-section {
+    margin-top: 20px;
+    }
+
+    .event {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    }
+
+    .event-info {
+    flex-grow: 1;
+    }
+
+    .add-to-calendar-button {
+    margin-left: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    }
+
+    .friends-section {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+    .friend {
+    width: 150px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+
+    .friend img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    }
+
+    .friend-name {
+    font-weight: bold;
+    }
