@@ -16,21 +16,21 @@
 
     <body>
         <header>
-        <nav>
-            <div class="container-fluid">
-                <a class="navbar-brand flex-between begin" href="/"><span><img class="navpicture" src="../static/vibe.png" alt="Ashesi"></span><span> </span><span class="cc">CONNECT</span></a>
-                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav ms-auto mt-2">
-                        <li class="nav-item"><a class="nav-link navtypo" href="register.html">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link navtypo" href="login.html">Sign In</a></li>
-                    </ul>
+            <nav>
+                <div class="container-fluid">
+                    <a class="navbar-brand flex-between begin" href="/"><span><img class="navpicture" src="../images/vibe.png" alt="Ashesi"></span><span> </span><span class="cc">CONNECT</span></a>
+                    <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link navtypo" href="register.html">Sign Up</a></li>
+                            <li class="nav-item"><a class="nav-link navtypo" href="login.html">Sign In</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
         <div>
             <div class="d-flex search-form flex-between">
                 <input autocomplete="off" class="form-control me-2 search-input search-icon" type="search" placeholder="Search..." aria-label="Search" name="query" oninput="searchQuery()" required>
@@ -40,7 +40,7 @@
                 <div class="container">
                     <form id="postForm" class="flex-container">
                         <a href="/users/">
-                            <img src="http://18.171.61.200/web_tech_group_project/static/vibed.jpeg" alt="pic" class="horizontal-image">
+                            <img src="../images/vibed.jpeg" alt="pic" class="horizontal-image">
                         </a>
                         <input type="text" placeholder="   What's on your mind? Daniel" class="inputbar" onclick="openPostEditor()">
                     </form>
@@ -69,14 +69,14 @@
                     <div class="post-actions">
                         <div class="vibe-comment">
                             <button class="vibe-button">
-                                <img id="vibe-image-" data-post-id="" src="http://18.171.61.200/web_tech_group_project/static/vibe.png" alt="vibe">
+                                <img id="vibe-image-" data-post-id="" src="../images/vibe.png" alt="vibe">
                                 <strong>
                                     <span id="vibes-count-">659</span>
                                     <span class="strong">vibes</span>
                                 </strong>
                             </button>
                             <button class="comment-button" onclick="loadComments()">
-                                <img src="http://18.171.61.200/web_tech_group_project/static/comment.png" alt="comment">
+                                <img src="../images/comment.png" alt="comment">
                                 <strong>
                                     <span id="comments-count-">34</span>
                                     <span class="strong">comments</span> 
@@ -115,14 +115,14 @@
                     <div class="post-actions">
                         <div class="vibe-comment">
                             <button class="vibe-button" onclick="like()">
-                                    <img id="vibe-image-" data-post-id="" src="http://18.171.61.200/web_tech_group_project/static/vibe.png" alt="vibe">
+                                    <img id="vibe-image-" data-post-id="" src="../images/vibe.png" alt="vibe">
                                 <strong>
                                     <span id="vibes-count-">482</span>
                                     <span class="strong">vibes</span>
                                 </strong>
                             </button>
                             <button class="comment-button" onclick="loadComments()">
-                                <img src="http://18.171.61.200/web_tech_group_project/static/comment.png" alt="comment">
+                                <img src="../images/comment.png" alt="comment">
                                 <strong>
                                     <span id="comments-count-">56</span>
                                     <span class="strong">comments</span> 
@@ -159,14 +159,14 @@
                         <div class="post-actions">
                             <div class="vibe-comment">
                                 <button class="vibe-button">
-                                    <img id="vibe-image-" data-post-id="" src="http://18.171.61.200/web_tech_group_project/static/vibe.png" alt="vibe">
+                                    <img id="vibe-image-" data-post-id="" src="../images/vibe.png" alt="vibe">
                                     <strong>
                                         <span id="vibes-count-">884</span>
                                         <span class="strong">vibes</span>
                                     </strong>
                                 </button>
                                 <button class="comment-button" onclick="loadComments()">
-                                    <img src="http://18.171.61.200/web_tech_group_project/static/comment.png" alt="comment">
+                                    <img src="../images/comment.png" alt="comment">
                                     <strong>
                                         <span id="comments-count-">133</span>
                                         <span class="strong">comments</span> 
@@ -204,14 +204,14 @@
                         <div class="post-actions">
                             <div class="vibe-comment">
                                 <button class="vibe-button">
-                                    <img id="vibe-image-" data-post-id="" src="http://18.171.61.200/web_tech_group_project/static/vibe.png" alt="vibe">
+                                    <img id="vibe-image-" data-post-id="" src="../images/vibe.png" alt="vibe">
                                     <strong>
                                         <span id="vibes-count-">210</span>
                                         <span class="strong">vibes</span>
                                     </strong>
                                 </button>
                                 <button class="comment-button">
-                                    <img src="http://18.171.61.200/web_tech_group_project/static/comment.png" alt="comment">
+                                    <img src="../images/comment.png" alt="comment">
                                     <strong>
                                         <span id="comments-count-">34</span>
                                         <span class="strong">comments</span> 
@@ -249,14 +249,14 @@
                         <div class="post-actions">
                             <div class="vibe-comment">
                                 <button class="vibe-button">
-                                    <img id="vibe-image-" data-post-id="" src="http://18.171.61.200/web_tech_group_project/static/vibe.png" alt="vibe">
+                                    <img id="vibe-image-" data-post-id="" src="../images/vibe.png" alt="vibe">
                                     <strong>
                                         <span id="vibes-count-">413</span>
                                         <span class="strong">vibes</span>
                                     </strong>
                                 </button>
                                 <button class="comment-button" onclick="loadComments()">
-                                    <img src="http://18.171.61.200/web_tech_group_project/static/comment.png" alt="comment">
+                                    <img src="../images/comment.png" alt="comment">
                                     <strong>
                                         <span id="comments-count-">34</span>
                                         <span class="strong">comments</span> 
@@ -294,14 +294,14 @@
                         <div class="post-actions">
                             <div class="vibe-comment">
                                 <button class="vibe-button">
-                                    <img id="vibe-image-" data-post-id="" src="http://18.171.61.200/web_tech_group_project/static/vibe.png" alt="vibe">
+                                    <img id="vibe-image-" data-post-id="" src="../images/vibe.png" alt="vibe">
                                     <strong>
                                         <span id="vibes-count-">559</span>
                                         <span class="strong">vibes</span>
                                     </strong>
                                 </button>
                                 <button class="comment-button" onclick="loadComments()">
-                                    <img src="http://18.171.61.200/web_tech_group_project/static/comment.png" alt="comment">
+                                    <img src="../images/comment.png" alt="comment">
                                     <strong>
                                         <span id="comments-count-">79</span>
                                         <span class="strong">comments</span> 
@@ -316,7 +316,6 @@
                             </div>
                         </div>
                     </div>
-                
             </div>
         </main>
         </div>
