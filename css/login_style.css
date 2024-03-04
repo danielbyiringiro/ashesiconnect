@@ -1,0 +1,87 @@
+/* Reset CSS */
+body, form, input, textarea, select {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff; /* White text */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color: #800000; /* Maroon background */
+    padding: 5px;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+}
+
+.signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h2 {
+    color: #800000; /* Maroon text */
+}
+
+.form {
+    margin-top: 20px;
+}
+
+.inputBox {
+    margin-bottom: 15px;
+}
+
+.inputBox input[type="email"],
+.inputBox input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.links {
+    margin-top: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+#btn {
+    background-color: #800000; /* Maroon button background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #500000; /* Darker shade of maroon on hover */
+}
+
+/* Placeholder color */
+::placeholder {
+    color: #606770;
+}
