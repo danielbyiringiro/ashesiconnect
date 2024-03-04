@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img src="../static/vibe.png" alt="Logo">
+        <img src="../images/vibe.png" alt="Logo">
         <h1>CONNECT</h1>
     </header>
 
@@ -18,12 +18,12 @@
                 <div class="inputBox">
                     <input type="email" placeholder="Email" name="email" id="email">
                 </div>
-                <a class="fgp" href="../view/forgotpassword.html">Forgot Password</a>
                 <div class="inputBox">
                     <input type="password" placeholder="Password" name="password" id="password" required>
                 </div>
                 <button type="submit" name="registerbtn" id="signup">Sign In</button>
-                <p id="signuplink">Don't have an account? <a href="../view/signup.html">Sign Up</a></p>
+                <p id="signuplink">Don't have an account? <a href="../view/signup.php">Sign Up</a></p>
+                <a style="color:maroon" href="../view/forgotpassword.php">Forgot Password</a>
             </form>
         </div>
 </body>

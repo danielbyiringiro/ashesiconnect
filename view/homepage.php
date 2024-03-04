@@ -26,9 +26,6 @@
                     <ul class="navbar-nav ms-auto mt-2">
                         <li class="nav-item"><a class="nav-link navtypo" href="register.html">Sign Up</a></li>
                         <li class="nav-item"><a class="nav-link navtypo" href="login.html">Sign In</a></li>
-                        <li class="nav-item"><a class="nav-link navtypo" href="https://ashesiconnect13.wixsite.com/ashesi-connect">CMS</a></li>
-                        <li class="nav-item"><a class="nav-link navtypo" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers/menuId/">Ashesi Community</a></li>
-
                     </ul>
                 </div>
             </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messaging Page</title>
-    <link rel="stylesheet" href="message_style.css">
+    <link rel="stylesheet" href="../css/message_style.css">
 </head>
 <body>
     <header>
@@ -39,6 +39,6 @@
     <footer>
         &copy; 2024 AshesiConnect
     </footer>
-    <script src="message_script.js"></script>
+    <script src="../js/message_script.js"></script>
 </body>
 </html>

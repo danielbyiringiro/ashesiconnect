@@ -81,19 +81,20 @@ bioElement.innerHTML = "<strong>Bio:</strong> " + newBio;
 
 function addPicture() {
 var newPicSrc = prompt("Enter the URL of the picture:");
-if (newPicSrc !== null) {
-var pictureSection = document.querySelector('.picture-section');
-var newPictureDiv = document.createElement('div');
-newPictureDiv.classList.add('picture');
-var newPictureImg = document.createElement('img');
-newPictureImg.src = newPicSrc;
-newPictureImg.alt = "Picture";
-var deleteButton = document.createElement('button');
-deleteButton.classList.add('delete-button');
-deleteButton.innerText = "X";
-newPictureDiv.appendChild(newPictureImg);
-newPictureDiv.appendChild(deleteButton);
-pictureSection.appendChild(newPictureDiv);
+if (newPicSrc !== null) 
+{
+    var pictureSection = document.querySelector('.picture-section');
+    var newPictureDiv = document.createElement('div');
+    newPictureDiv.classList.add('picture');
+    var newPictureImg = document.createElement('img');
+    newPictureImg.src = newPicSrc;
+    newPictureImg.alt = "Picture";
+    var deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-button');
+    deleteButton.innerText = "X";
+    newPictureDiv.appendChild(newPictureImg);
+    newPictureDiv.appendChild(deleteButton);
+    pictureSection.appendChild(newPictureDiv);
 }
 }
 

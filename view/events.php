@@ -3,22 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="events.css">
+    <link rel="stylesheet" href="../css/events.css">
     <title>Events Page</title>
-    <style>
-        
-
-        
-    </style>
 </head>
 <body>
-    <header>
-        <h1>Upcoming Events</h1>
-    </header>
-
-    <section id="event-calendar">
-        </section>
-
+    <header><h1>Upcoming Events</h1></header>
+    <section id="event-calendar"></section>
     <section id="event-list">
         <h2>Event List</h2>
         <div class="event-list-container">
@@ -50,13 +40,7 @@
             </ul>
         </div>
     </section>
-
-    <div id="event-details-modal" class="modal">
-        </div>
-
-    <script src="events.js">
-
-        
-    </script>
+    <div id="event-details-modal" class="modal"></div>
+    <script src="../js/events.js"></script>
 </body>
 </html>

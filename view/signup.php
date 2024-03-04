@@ -64,7 +64,7 @@
         <input type="radio" name="female" id="female" class="female" required>
         </div>
         <button type="submit" name="registerbtn" id="signup">Sign Up</button>
-        <p id="signinlink">Already have an account? <a href="../view/signin.html">Sign In</a></p>
+        <p id="signinlink">Already have an account? <a href="../view/signin.php">Sign In</a></p>
         </div>
     </div>
         </form>

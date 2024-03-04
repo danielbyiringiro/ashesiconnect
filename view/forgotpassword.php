@@ -19,7 +19,7 @@
 
         <button type="submit">Search</button>
 
-        <a class="btl" href="../view/signin.html"><u>Back to Login</u></a>
+        <a class="btl" href="../view/signin.php"><u>Back to Login</u></a>
     </form>
 </body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img src="../static/vibe.png" alt="Logo">
+        <img src="../images/vibe.png" alt="Logo">
         <h1>CONNECT</h1>
     </header>
         <div class="form">
