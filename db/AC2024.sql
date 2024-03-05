@@ -1,80 +1,74 @@
-drop database if exists AC2024;
-Create DATABASE AC2024;
+DROP DATABASE IF EXISTS AC2024;
+CREATE DATABASE AC2024;
 USE AC2024;
 
-Create Table Users (
-    ID BIGINT NOT NULL Primary Key,
-    first_name Varchar(50) NOT NULL,
-    middle_name Varchar(50) NULL DEFAULT NULL,
-    last_name Varchar(50) NOT NULL,
-    username Varchar(50) NOT NULL,
-    email Varchar(50) NOT NULL,
-    password_hash Varchar(50) NOT NULL,
-    profile_picture Varchar(300) NULL DEFAULT NULL,
-    Nationality Varchar(100) NULL DEFAULT NULL,
+CREATE TABLE USERS (
+    ID INTEGER NOT NULL PRIMARY KEY auto_increment,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(15) NOT NULL,
+    password_hash VARCHAR(50) NOT NULL,
+    major VARCHAR(100), 
+    year_group INT,
+    date_of_birth DATE,
+    gender ENUM('Male', 'Female'),
     Created_at DATETIME NOT NULL,
-    Updated_at DATETIME NOT NULL,
-    Unique index uq_username (username ASC),
-    Unique index uq_email (email ASC)
+    UNIQUE INDEX uq_email (email ASC)
 );
 
-Create Table Posts (
-    id BIGINT NOT NULL AUTO_INCREMENT Primary Key,
-    user_id BIGINT NOT NULL,
+CREATE TABLE POST (
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INTEGER NOT NULL,
     content TEXT NOT NULL,
+    picture_path TEXT NOT NULL,
     created_at DATETIME NOT NULL,
-    updated_at DATETIME NULL DEFAULT NULL,
-    INDEX idx_post_user (user_id ASC),
-     CONSTRAINT fk_post_user
-     FOREIGN KEY (user_id)
-     REFERENCES users (id)
-     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    FOREIGN KEY (user_id) REFERENCES Users (ID)
 );
 
-Create Table Comments (
-    ID Bigint not null auto_increment Primary Key,
-    post_id BIGINT NOT NULL,
-    user_id BIGINT NOT NULL,
-    content TEXT NOT NULL,
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME NULL DEFAULT NULL,
-    PRIMARY KEY (id),
-    INDEX idx_comment_post (post_id ASC),
-    INDEX idx_comment_user (user_id ASC),
-    CONSTRAINT fk_comment_post
-    FOREIGN KEY (post_id)
-    REFERENCES posts (id)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-    CONSTRAINT fk_comment_user
-    FOREIGN KEY (user_id)
-    REFERENCES users (id)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-
+CREATE TABLE COMMENT (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    COMMENT_TEXT TEXT NOT NULL,
+    POSTID INTEGER NOT NULL,
+    userId INTEGER NOT NULL,
+    CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (POSTID) REFERENCES POST (id),
+    FOREIGN KEY (userId) REFERENCES USERS (ID)
 );
 
-Create Table Likes (
-    id bigint AUTO_INCREMENT Primary Key,
-    post_id BIGINT NOT NULL,
-    user_id BIGINT NOT NULL,
-    StudentID Int References Students(StudentID),
-    Title Varchar(100) References Books(Title),
-    BorrowDate DATE NOT NULL,
-    like_type ENUM('LIKE', 'DISLIKE') NOT NULL,
+CREATE TABLE LIKES (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    postId INTEGER NOT NULL,
+    userId INTEGER NOT NULL,
+    FOREIGN KEY (postId) REFERENCES POST(id),
+    FOREIGN KEY (userId) REFERENCES USERS (id)
+);
+
+CREATE TABLE MESSAGES (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    sender_id INTEGER NOT NULL,
+    receiver_id INTEGER NOT NULL,
+    message_text TEXT NOT NULL,
     created_at DATETIME NOT NULL,
-    updated_at DATETIME NULL DEFAULT NULL,
-    INDEX idx_like_post (post_id ASC),
-    INDEX idx_like_user (user_id ASC),
-    CONSTRAINT fk_like_post
-    FOREIGN KEY (post_id)
-    REFERENCES posts (id)
-	ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-    CONSTRAINT fk_like_user
-    FOREIGN KEY (user_id)
-    REFERENCES users (id)
-    ON DELETE NO ACTION
+    FOREIGN KEY (sender_id) REFERENCES USERS (id),
+    FOREIGN KEY (receiver_id) REFERENCES USERS (id)
+);
+
+CREATE TABLE EVENTS (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    event_name VARCHAR(100) NOT NULL,
+    event_description TEXT,
+    event_date DATE,
+    location VARCHAR(255),
+    created_at DATETIME NOT NULL
+);
+
+CREATE TABLE EVENT_SIGNUP (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    event_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    signup_date DATETIME NOT NULL,
+    FOREIGN KEY (event_id) REFERENCES EVENTS (id),
+    FOREIGN KEY (user_id) REFERENCES USERS (ID)
 );
 
