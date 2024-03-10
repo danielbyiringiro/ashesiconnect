@@ -36,15 +36,20 @@
                 <input autocomplete="off" class="form-control me-2 search-input search-icon" type="search" placeholder="Search..." aria-label="Search" name="query" oninput="searchQuery()" required>
             </div>
             <div id="search-results"></div>   
+         
             <main class="container-fluid py-5 text-center top">
-                <div class="container">
-                    <form id="postForm" class="flex-container">
-                        <a href="/users/">
-                            <img src="../images/vibed.jpeg" alt="pic" class="horizontal-image">
-                        </a>
-                        <input type="text" placeholder="   What's on your mind? Daniel" class="inputbar" onclick="openPostEditor()">
-                    </form>
-                </div>
+        <div class="container">
+            <form id="postForm" class="flex-container" method="POST" action="post.php">
+                <!-- Assuming you'll have a session variable for user id -->
+                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                <!-- Your post content input -->
+                <textarea name="content" placeholder="What's on your mind?" class="inputbar" onclick="openPostEditor()" required></textarea>
+                <!-- Add an option for uploading an image -->
+                <input type="file" name="post_image">
+                <!-- Submit button -->
+                <button type="submit">Post</button>
+            </form>
+        </div>
 
                 <div class="post-container">
                     <div class="post-header">
