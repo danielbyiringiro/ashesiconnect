@@ -108,3 +108,15 @@ button:hover {
     text-align: center;
     color: maroon;
 }
+
+#error_paragraph {
+    font-size: 17px;
+    color: red;
+    margin: 0;
+    animation: shake 0.1s ease-in-out 5 alternate; /* Define the shake animation */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); } /* Start position of the animation */
+    100% { transform: translateX(15px); } /* End position of the animation */
+}

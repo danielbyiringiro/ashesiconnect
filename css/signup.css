@@ -73,8 +73,8 @@ label {
 }
 
 input[type="fname"] {
-    position: relative; /* Set the input field as the relative positioning context */
-    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    position: relative; 
+    padding: 8px 10px 8px 40px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -83,8 +83,8 @@ input[type="fname"] {
 }
 
 input[type="lname"] {
-    position: relative; /* Set the input field as the relative positioning context */
-    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    position: relative;
+    padding: 8px 10px 8px 40px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -94,8 +94,8 @@ input[type="lname"] {
 }
 
 input[type="email"] {
-    position: relative; /* Set the input field as the relative positioning context */
-    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    position: relative; 
+    padding: 8px 10px 8px 40px; 
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -104,8 +104,8 @@ input[type="email"] {
 }
 
 input[type="tel"] {
-    position: relative; /* Set the input field as the relative positioning context */
-    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    position: relative;
+    padding: 8px 10px 8px 40px; 
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -114,8 +114,8 @@ input[type="tel"] {
 }
 
 input[type="password"] {
-    position: relative; /* Set the input field as the relative positioning context */
-    padding: 8px 10px 8px 40px; /* Adjust padding to accommodate the icon */
+    position: relative; 
+    padding: 8px 10px 8px 40px; 
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -159,34 +159,9 @@ input[type="password"] {
     margin-right: -2px;
 }
 
-.gen {
-    margin-top: -13px;
-}
-
-.male {
-    float: left;
-    margin-left: 83px; /* Adjust as needed for spacing */
-    margin-top: -22px;
-}
-
-.female {
-    float: left;
-    margin-left: 54px; /* Adjust as needed for spacing */
-    margin-top: -22px;
-}
-
-input[type="radio"].male {
-   float: left;
-    margin-left: 20px; /* Adjust as needed for spacing */
-    margin-top: -19px;
-    vertical-align: middle; /* Aligns the radio buttons vertically with the labels */
-}
-
-input[type="radio"].female {
-    float: right;
-    margin-right: 130px; /* Adjust as needed for spacing */
-    margin-top: -20px;
-    vertical-align: middle; /* Aligns the radio buttons vertically with the labels */
+#gender.horizontal > div {
+    display: inline-block;
+    margin-right: 10px; 
 }
 
 button {
@@ -207,4 +182,16 @@ button:hover {
 #signinlink a {
     text-align: center;
     color: maroon;
+}
+
+#error_paragraph {
+    font-size: 17px;
+    color: red;
+    margin: 0;
+    animation: shake 0.1s ease-in-out 5 alternate; /* Define the shake animation */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); } /* Start position of the animation */
+    100% { transform: translateX(15px); } /* End position of the animation */
 }
