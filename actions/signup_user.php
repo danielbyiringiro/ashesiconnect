@@ -31,27 +31,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate email
-    if (empty(trim($_POST["emailaddress"]))) {
+    if (empty(trim($_POST["emailaddress"]))) 
+    {
         array_push($error_array, "Please enter your email address.<br>");
-    } elseif (!filter_var(trim($_POST["emailaddress"]), FILTER_VALIDATE_EMAIL)) {
+    } 
+    elseif (!filter_var(trim($_POST["emailaddress"]), FILTER_VALIDATE_EMAIL)) 
+    {
         array_push($error_array, "Invalid email format. Please enter a valid email address.<br>");
-    } else {
-        // Check if the email is already taken
+    } 
+    else 
+    {
         $param_email = trim($_POST["emailaddress"]);
-        $sql = "SELECT id FROM users WHERE email = ?";
-        if ($stmt = $conn->prepare($sql)) {
-            $stmt->bind_param("s", $param_email);
-            if ($stmt->execute()) {
-                $stmt->store_result();
-                if ($stmt->num_rows == 1) {
-                    array_push($error_array, "This email is already taken.<br>");
+        $email_domain = substr(strrchr($param_email, "@"), 1);
+
+        if ($email_domain !== "ashesi.edu.gh") 
+        {
+            array_push($error_array, "Please enter a valid Ashesi email address.<br>");
+        }
+        else
+        {
+            $sql = "SELECT id FROM users WHERE email = ?";
+            if ($stmt = $conn->prepare($sql)) 
+            {
+                $stmt->bind_param("s", $param_email);
+                if ($stmt->execute()) {
+                    $stmt->store_result();
+                    if ($stmt->num_rows == 1) {
+                        array_push($error_array, "This email is already taken.<br>");
+                    } else {
+                        $email = $param_email;
+                    }
                 } else {
-                    $email = $param_email;
+                    echo "Oops! Something went wrong. Please try again later.<br>";
                 }
-            } else {
-                echo "Oops! Something went wrong. Please try again later.<br>";
+                $stmt->close();
             }
-            $stmt->close();
+
         }
     }
 

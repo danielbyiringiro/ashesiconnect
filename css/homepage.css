@@ -20,7 +20,6 @@ nav .navbar-brand .red
 }
 
 .navbar {
-    padding: 0.1rem 6%;
     margin-bottom: 0;
     position: fixed;
     width: 100%;
@@ -375,4 +374,50 @@ a:hover
 {
     display: flex;
     justify-content: space-between;
+}
+
+#mytextarea {
+    width: 100%;
+    outline: none;
+    position: relative;
+    border: none;
+    resize: none;
+  }
+
+#mytextarea :focus {
+    outline: none;
+}
+
+input[type="file"] {
+    display: none;
+    }
+    /* Optional: Add some hover and active effects for better user experience */
+label#uploadLabel:hover {
+    background-color: #2980b9;
+    }
+
+label#uploadLabel:active {
+    background-color: #1f618d;
+    }
+
+.image_preview
+{
+    max-width: 100%;
+}
+
+#image_preview
+{
+    max-width: 100%;
+}
+
+#error_paragraph {
+    font-size: 17px;
+    color: red;
+    margin: 0;
+    animation: shake 0.1s ease-in-out 5 alternate; /* Define the shake animation */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); } /* Start position of the animation */
+    100% { transform: translateX(15px); } /* End position of the animation */
 }

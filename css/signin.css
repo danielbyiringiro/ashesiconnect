@@ -120,3 +120,11 @@ button:hover {
     0% { transform: translateX(0); } /* Start position of the animation */
     100% { transform: translateX(15px); } /* End position of the animation */
 }
+
+#mytextarea {
+    width: 100%;
+    outline: none;
+    position: relative;
+    border: none;
+    resize: none;
+  }
