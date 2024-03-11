@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"]))
 
     if ($result->num_rows > 0) {
         $token = bin2hex(random_bytes(16));
-        $sql_update = "UPDATE users SET reset_token = ? WHERE email = ?";
+        $sql_update = "UPDATE USERS SET reset_token = ? WHERE email = ?";
         $stmt = $conn->prepare($sql_update);
         $stmt->bind_param("ss", $token, $email);
 
@@ -84,7 +84,7 @@ elseif($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["token"]))
     $token = $_POST["token"];
     $submitted_email = $_POST["submitted_email"];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT * FROM USERS WHERE email = ?");
     $stmt->bind_param("s", $submitted_email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -112,7 +112,7 @@ elseif($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["token"]))
             }
             else
             {
-                $sql = "UPDATE users SET password_hash = ? WHERE email = ?";
+                $sql = "UPDATE USERS SET password_hash = ? WHERE email = ?";
                 $new_password = password_hash($new_password, PASSWORD_DEFAULT);
                 $stmt = $conn->prepare($sql);
 
