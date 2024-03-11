@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
         // Prepare an insert statement
         echo "Hello";
-        $sql = "INSERT INTO users (first_name, last_name, email, phone_number, password_hash, major, year_group, date_of_birth, gender, Created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+        $sql = "INSERT INTO USERS (first_name, last_name, email, phone_number, password_hash, major, year_group, date_of_birth, gender, Created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
 
         if ($stmt = $conn->prepare($sql)) 
         {
