@@ -11,7 +11,7 @@
         <img src="../images/vibe.png" alt="Logo">
         <h1>CONNECT</h1>
     </header>
-    <form action="forgotpassword.php" method="post" name="forgotpasswordform" id="forgotpassword">
+    <form action="../actions/forgotpassword_action.php" method="post" name="forgotpasswordform" id="forgotpassword">
         <h2>Find Your Account</h2>
         <p>Please enter your email or mobile phone number to search for your account.</p>
         <label for="email">Email or Phone:</label>
