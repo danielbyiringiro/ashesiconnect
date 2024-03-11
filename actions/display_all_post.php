@@ -1,13 +1,13 @@
 <?php
 include("../settings/connection.php"); 
 
-$sql = "SELECT * FROM post ORDER BY created_at DESC";
+$sql = "SELECT * FROM POST ORDER BY created_at DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $user_id = $row['user_id']; // Assuming the user ID is stored in the 'user_id' column of the posts table
-        $user_query = "SELECT * FROM users WHERE ID = ?";
+        $user_query = "SELECT * FROM USERS WHERE ID = ?";
         $stmt = $conn->prepare($user_query);
         $stmt->bind_param("i", $user_id);
         $stmt->execute();
