@@ -38,6 +38,7 @@
                 <input autocomplete="off" class="form-control me-2 search-input search-icon" type="search" placeholder="Search..." aria-label="Search" name="query" oninput="searchQuery()" required>
             </div>
             <div id="search-results"></div>   
+         
             <main class="container-fluid py-5 text-center top">
                 <div class="container">
                     <form id="postForm" class="flex-container">
