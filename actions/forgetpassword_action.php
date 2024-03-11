@@ -3,7 +3,7 @@
 require_once 'connection.php';
 
 // Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"])) {
+if ($_SERVER["submit"] == "POST" && isset($_POST["email"])) {
     $email = $_POST["email"];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
