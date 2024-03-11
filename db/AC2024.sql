@@ -23,7 +23,7 @@ CREATE TABLE POST (
     content TEXT NOT NULL,
     picture_path TEXT NOT NULL,
     created_at DATETIME NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users (ID)
+    FOREIGN KEY (user_id) REFERENCES USERS (ID)
 );
 
 CREATE TABLE COMMENT (

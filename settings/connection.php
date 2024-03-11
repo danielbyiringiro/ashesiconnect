@@ -2,8 +2,8 @@
 
 $db_host = 'localhost';
 $db_user = 'root';
-$db_pass = '';
-$db_name = 'ac2024';
+$db_pass = 'cs341webtech';
+$db_name = 'AC2024';
 
 // Attempt to connect to the database
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
