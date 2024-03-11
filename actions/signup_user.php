@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else
         {
-            $sql = "SELECT id FROM users WHERE email = ?";
+            $sql = "SELECT id FROM USERS WHERE email = ?";
             if ($stmt = $conn->prepare($sql)) 
             {
                 $stmt->bind_param("s", $param_email);
