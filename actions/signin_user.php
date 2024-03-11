@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if (empty($error_array)) 
     {
         // Prepare a select statement
-        $sql = "SELECT id, email, password_hash, first_name, last_name FROM users WHERE email = ?";
+        $sql = "SELECT id, email, password_hash, first_name, last_name FROM USERS WHERE email = ?";
 
         if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
