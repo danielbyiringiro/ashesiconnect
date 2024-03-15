@@ -2,7 +2,7 @@
 
 $db_host = 'localhost';
 $db_user = 'root';
-$db_pass = 'cs341webtech';
+$db_pass = '';
 $db_name = 'AC2024';
 
 // Attempt to connect to the database

@@ -15,6 +15,34 @@
         <link href="/static/favicon.ico" rel="icon">
         <link href="../css/homepage.css" rel="stylesheet">  
         <title>Home Page</title>
+        <script>
+            function vibeClicked(user_id, post_id)
+            {
+                const image = document.getElementById(`vibe-image-${post_id}`);
+                const count = document.getElementById(`vibes-count-${post_id}`);
+
+                fetch('../actions/vibeorunvibe.php', 
+                {
+                    method : 'POST',
+                    headers:
+                    {
+                        'Content-Type' : 'application/json',
+                    },
+                    body :JSON.stringify(
+                    {
+                        postId :post_id,
+                        userId :user_id
+                    })
+                })
+                .then(response => response.json())
+                .then(data => 
+                {
+                    count.textContent = data['likes'];
+                    image.src = data['image_src'];
+                })
+                
+            }
+        </script>
     </head>
 
     <body>
