@@ -417,6 +417,22 @@ label#uploadLabel:active {
     animation: shake 0.1s ease-in-out 5 alternate; /* Define the shake animation */
 }
 
+.comment-add
+{
+    resize: none;
+    border: none;
+    height:30px;
+    outline: none;
+    width: 100%;
+    position: relative;
+}
+
+.comment-section
+{
+    display: block;
+    margin-top: 10px;
+}
+
 @keyframes shake {
     0% { transform: translateX(0); } /* Start position of the animation */
     100% { transform: translateX(15px); } /* End position of the animation */

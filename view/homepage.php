@@ -16,6 +16,146 @@
         <link href="../css/homepage.css" rel="stylesheet">  
         <title>Home Page</title>
         <script>
+
+            var commentsLoaded = false;
+
+            document.addEventListener('DOMContentLoaded', () => 
+            {
+                const main = document.getElementById('main');
+
+                fetch("../actions/loadPosts.php", 
+                {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
+                .then((response) => response.json())
+                .then((data) => 
+                {
+
+                    var postHTML = data.map(post => 
+                    {
+                        const postImageContainer = post['picturepath'] !== 'N/A' ? `<div class="post-image-container"><img class="post-image" src="${post['picturepath']}" alt="Post Image"></div>` : '';
+                        //console.log(post['picture'])
+                        return  `<div class='post-container'>
+                                    <div class='post-header'>
+                                        <a class='header_link'>
+                                            <img src='https://api.slingacademy.com/public/sample-photos/2.jpeg' class='horizontal-image' alt='Profile Picture'>
+                                        </a>
+                                        <span class="post-username">
+                                            <p class="username"><a>${post['username']}</a></p>
+                                            <p class="belowtext">${post['class']} ${post['major']} | ${post['time']}</p>
+                                        </span>
+                                    </div>
+                                    <br>
+                                    <div class="post-content" id="postContent">
+                                        ${post['content']}
+                                    </div>
+                                    ${postImageContainer}
+                                    <div class="post-actions">
+                                        <div class="vibe-comment">
+                                            <button class="vibe-button">
+                                                    <img id="vibe-image-${post['postId']}" data-post-id="" onclick="vibeClicked(${post['currentUser']}, ${post['postId']})" src="${post['src']}" alt="vibe">
+                                                <strong>
+                                                    <span id="vibes-count-${post['postId']}">${post['vibes']}</span>
+                                                    <span class="strong">vibes</span>
+                                                </strong>
+                                            </button>
+                                            <button class="comment-button" onclick="loadComments(${post['postId']})">
+                                                <img src="../images/comment.png" alt="comment">
+                                                <strong>
+                                                    <span id="comments-count-${post['postId']}">${post['comments']}</span>
+                                                    <span class="strong">comments</span> 
+                                                </strong>
+                                            </button>
+                                        </div>
+                                        <div class="comment-section">
+                                            <div class="comment_area">
+                                                <textarea class="comment-add" id="comment-input-${post['postId']}" placeholder="Leave a comment..." required></textarea>
+                                                <button onclick="addComment(${post['currentUser']}, ${post['postId']})">Post</button>
+                                            </div>
+                                            <div class="most_recent">
+                                                <span class='comment-username' id="comments-username-${post['postId']}">${post['most_recent_username'] ? post['most_recent_username'] : ''}</span>
+                                                <span id="comments-${post['postId']}">${post['most_recent_text'] ? post['most_recent_text'] : ''}</span>
+                                            </div>
+                                            <div id="display-comments-${post['postId']}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`
+                    })
+
+                    const main = document.getElementById('main');
+                    main.innerHTML += postHTML.join('');
+
+                })
+                
+            });
+
+            function openPostEditor()
+            {
+                const url = "../view/newpost.php";
+                window.location.href = url;
+            }
+
+            function loadComments(post_id)
+            {
+                var commentsDiv = document.getElementById(`display-comments-${post_id}`);
+                const commentSection = document.getElementById(`comments-${post_id}`);
+                const commentUsername = document.getElementById(`comments-username-${post_id}`);
+
+                if (commentsLoaded) { 
+                    commentsDiv.innerHTML = '';
+                    commentSection.classList.remove('disapear');
+                    commentUsername.classList.remove('disapear');
+                    commentsLoaded = false;
+                    commentsDiv.classList.remove("displayComments");
+                    return;
+                }
+
+                fetch("../actions/loadcomments.php", 
+                {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({post_id: post_id}),
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data['success'] === true)
+                    {
+                        var comments = data['comments'];
+                        commentsDiv.classList.remove("displayComments");
+                        commentSection.classList.add('disapear');
+                        commentUsername.classList.add('disapear');
+                        var commentHTML = comments.map(comment => {
+                            return `<div class='comment_div'>
+                                        <div class='comment_details'>
+                                            <img src='${comment['picture']}' alt='${comment['username']}' class='comment_picture'>
+                                            <div>
+                                                <div class='comment_username'>
+                                                    <p>${comment['username']}</p>
+                                                </div>
+                                                <div class='other_details'>
+                                                    <p>${comment['class']}</p>
+                                                    <p>${comment['major']}</p>
+                                                    <p>${comment['time']}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='comment_text'>
+                                            <p>${comment['text']}</p>
+                                        </div>
+                                    </div>`
+                        })
+
+                        commentsDiv.innerHTML = commentHTML.join('');
+                        commentsLoaded = true;
+                        console.log('Received');
+                    }});
+            }
             function vibeClicked(user_id, post_id)
             {
                 const image = document.getElementById(`vibe-image-${post_id}`);
@@ -42,6 +182,59 @@
                 })
                 
             }
+
+            function addComment(user_id, post_id) 
+            {
+                const commentInput = document.getElementById(`comment-input-${post_id}`);
+                const commentCount = document.getElementById(`comments-count-${post_id}`);
+                const comment = commentInput.value;
+
+                if (comment.trim() === '') 
+                {
+                    return;
+                }
+
+                const commentData = {
+                    post_id: post_id,
+                    text: comment,
+                    user_id: user_id,
+                };
+
+                console.log(commentData);
+
+                fetch('../actions/addcomment.php', 
+                {
+                    method :'POST',
+                    headers : {
+                        'Content-Type': 'application/json',
+                    },
+
+                    body: JSON.stringify(commentData),
+                })
+                .then((res) => res.json())
+                .then((data) => {
+
+                    if (data['success'] === true)
+                    {
+                        commentInput.value = '';
+                        commentCount.innerHTML = data['count'];
+                        const comment_text = data['text'];
+                        const comment_username = data['username'];
+                        const commentSection = document.getElementById(`comments-${post_id}`);
+                        const commentUsername = document.getElementById(`comments-username-${post_id}`);
+                        commentSection.innerHTML = comment_text;
+                        commentUsername.classList.add('comment-username');
+                        commentUsername.innerHTML = comment_username;
+                    }
+                    else
+                    {
+                        console.log(data);
+                    }
+
+                });
+
+
+            }
         </script>
     </head>
 
@@ -67,7 +260,7 @@
             </div>
             <div id="search-results"></div>   
          
-            <main class="container-fluid py-5 text-center top">
+            <main id='main' class="container-fluid py-5 text-center top">
                 <div class="container">
                     <form id="postForm" class="flex-container">
                         <a href="/users/">
@@ -76,16 +269,7 @@
                         <?php include("../actions/create_post_input.php") ?>
                     </form>
                 </div>
-
-                <?php include("../actions/display_all_post.php")?>
-        </main>
+            </main>
         </div>
     </body>
 </html>
-<script>
-    function openPostEditor()
-    {
-        const url = "../view/newpost.php";
-        window.location.href = url;
-    }
-</script>
