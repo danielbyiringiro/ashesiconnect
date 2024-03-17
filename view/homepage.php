@@ -248,7 +248,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav ms-auto mt-2">
-                            <li class="nav-item"><a class="nav-link navtypo" href="../actions/logout_user.php">Log Out</a></li>
+                            <li class="nav-item"><a style="color: white;" class="nav-link navtypo" href="../actions/logout_user.php">Log Out</a></li>
+                            <li class="nav-item"><a style="color: white;" class="nav-link navtypo" href="user_profile.php">Profile</a><li>
                         </ul>
                     </div>
                 </div>

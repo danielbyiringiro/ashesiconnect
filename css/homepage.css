@@ -60,10 +60,11 @@ header {
     font-weight: bold;
     text-align: center;
     font-size: 20px;
+    color: white;
 }
 
 .nav-item .nav-link.navtypo {
-    color: black;
+    color: white;
 }
 
 
