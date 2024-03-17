@@ -67,3 +67,4 @@ document.querySelectorAll('.rsvp-button').forEach(button => {
         handleRSVP(eventId);
     });
 });
+
