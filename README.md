@@ -8,7 +8,7 @@ AshesiConnect is a web application designed to facilitate communication and inte
 - **Posting**: Users can create and share posts with the community. Posts can include text content and images.
 - **Commenting**: Users can comment on posts to engage in discussions and conversations.
 - **Liking**: Users can express their appreciation for posts by liking them.
-- **User Profiles**: Each user has a profile page where they can view their own posts and activity, as well as other users' profiles.
+- **User Profiles**: Each user has a profile page where they can view their own posts and activity.
 
 ## Technologies Used
 
