@@ -19,6 +19,10 @@ session_start();
             document.addEventListener('DOMContentLoaded', () =>
             {
                 const main = document.getElementById('main');
+                const form = document.getElementById('posttempcontainer');
+                form.style.display = 'none';
+                
+                console.log(`style for form is : ${form.style.display}`);
 
                 fetch("../actions/loadUserPost.php", 
                 {
@@ -32,6 +36,7 @@ session_start();
                 {
                     if (data.length !== 0)
                     {
+                        
                         var postHTML = data.map(post => 
                         {
                             const postImageContainer = post['picturepath'] !== 'N/A' ? `<div class="post-image-container"><img class="post-image" src="${post['picturepath']}" alt="Post Image"></div>` : '';
@@ -39,7 +44,7 @@ session_start();
                                         <div class='coming'>
                                             <div class='post-header'>
                                                 <a class='header_link'>
-                                                    <img src='https://api.slingacademy.com/public/sample-photos/2.jpeg' class='horizontal-image' alt='Profile Picture'>
+                                                    <img src='${post['userPicture']}'  class='horizontal-image' alt='Profile Picture'>
                                                 </a>
                                                 <span class="post-username">
                                                     <p class="username"><a>${post['username']}</a></p>
@@ -296,6 +301,49 @@ session_start();
 
 
             }
+
+            function editPicture() 
+            {
+                const div = document.getElementById('posttempcontainer');
+                div.style.display = 'block';
+
+                div.innerHTML = `
+                    <div class="post container editPictureContainer">
+                        <form action="../actions/updatepicture.php" method="post" enctype="multipart/form-data" id="newpostform">
+                            <div>
+                                <div class="image_preview" style="display:none;">
+                                <img id="image_preview" src="" alt="Image Preview" style="margin-bottom: 5px; width: 100%; height: 100%;">
+                                </div>
+                                <div>
+                                    <input autocomplete="off" class="form-control mx-auto w-auto smaller-input" value="Upload Image" id="image" name="image" type="file">
+                                    <label for="image" id="uploadLabel" class="btn btn-secondary">Upload Image</label>
+                                    <button class="btn btn-primary" type="submit" onclick="submitForm()">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                `;
+
+                const fileInput = document.getElementById('image');
+                const uploadLabel = document.getElementById('uploadLabel');
+                const previewContainer = document.querySelector('.image_preview');
+
+                fileInput.addEventListener('change', () => {
+                    const files = fileInput.files;
+                    if (files.length > 0)
+                    {
+                        uploadLabel.textContent = "Image Uploaded";
+                        previewContainer.style.display = 'block';
+                        document.getElementById('image_preview').src = URL.createObjectURL(files[0]);
+                    } 
+                });
+            }
+
+            function submitForm() 
+            {
+                const form = document.getElementById('newpostform');
+                form.submit();
+            }
         </script>
     </head>
     <body>
@@ -322,15 +370,17 @@ session_start();
         <main id='main' class="container-fluid py-5 text-center top">
             <div class="container">
                 <div class="profile-picture" >
-                    <img id="profile-picture" src="https://api.slingacademy.com/public/sample-photos/2.jpeg" alt="Profile Picture">
+                    <img id="profile-picture" src="<?php echo $_SESSION['picturePath']?>" alt="Profile Picture">
                 </div>
                 <div class="profile-name" id="details">
                     <p class="belowtext"><?php echo $_SESSION['username']. " " . $_SESSION['major'] . " " .$_SESSION['year'] ?></p>
                     <p class="belowtext">Joined: <?php echo $_SESSION['joined'] ?></p>
                     <p class="belowtext">Bio: <?php echo $_SESSION['bio'] ?> </p>
                     <button class="btn btn-secondary" onclick="editbio()">Edit Bio</button>
+                    <button class="btn btn-secondary" id="upload_pic" onclick="editPicture()">Edit Picture</button>
                 </div>
             </div>
+            <div id="posttempcontainer"></div>
         </main>
     </body>
 </html>

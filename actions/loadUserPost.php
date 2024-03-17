@@ -89,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 
     
                 $username = $user_row["first_name"] . " " . $user_row["last_name"];
+                $userPicture = $user_row['picture_path'];
                 $year_group = "C'" . substr($user_row['year_group'], 2);
                 $initials = strtoupper(preg_replace('/\b(\w)\w*\s*/', '$1', $user_row['major']));
                 $formatted_date = date("h:i d F", strtotime($row['created_at']));
@@ -107,7 +108,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     "postId" => $post_id,
                     "currentUser" => $_SESSION['id'],
                     'content' => $row['content'],
-                    'picturepath' => $row['picture_path']
+                    'picturepath' => $row['picture_path'],
+                    'userPicture' => $userPicture
                 );
 
                 $response[] = $post_response;

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if (empty($error_array)) 
     {
         // Prepare a select statement
-        $sql = "SELECT id, email, password_hash, first_name, last_name, major, year_group, Created_at, bio FROM USERS WHERE email = ?";
+        $sql = "SELECT id, email, password_hash, first_name, last_name, major, year_group, Created_at, bio, picture_path FROM USERS WHERE email = ?";
 
         if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 // Check if email exists, then verify password
                 if ($stmt->num_rows == 1) {
                     // Bind result variables
-                    $stmt->bind_result($id, $email, $hashed_password, $first_name, $last_name, $major, $year, $join, $bio);
+                    $stmt->bind_result($id, $email, $hashed_password, $first_name, $last_name, $major, $year, $join, $bio, $picture_path);
                     if ($stmt->fetch()) {
                         if (password_verify($password, $hashed_password)) 
                         {
@@ -61,8 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                             $_SESSION['year'] = $year_group = "C'" . substr($year, 2);
                             $_SESSION['joined'] = date("h:i d F", strtotime($join));
                             $_SESSION['bio'] = $bio;
-
-                            // Redirect user to welcome page
+                            $_SESSION['picturePath'] = $picture_path;
                             header("location: ../view/homepage.php");
                             exit();
                         } 

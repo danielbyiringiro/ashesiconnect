@@ -41,7 +41,7 @@
                         return  `<div class='post-container'>
                                     <div class='post-header'>
                                         <a class='header_link'>
-                                            <img src='https://api.slingacademy.com/public/sample-photos/2.jpeg' class='horizontal-image' alt='Profile Picture'>
+                                            <img src='${post['userPicture']}' class='horizontal-image' alt='Profile Picture'>
                                         </a>
                                         <span class="post-username">
                                             <p class="username"><a>${post['username']}</a></p>

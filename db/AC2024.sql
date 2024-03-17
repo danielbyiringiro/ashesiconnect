@@ -12,6 +12,7 @@ CREATE TABLE USERS (
     major VARCHAR(100), 
     year_group INT,
     date_of_birth DATE,
+    picture_path VARCHAR(255) NOT NULL DEFAULT 'https://api.slingacademy.com/public/sample-photos/2.jpeg',
     gender ENUM('Male', 'Female'),
     Created_at DATETIME NOT NULL,
     UNIQUE INDEX uq_email (email ASC)
