@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     {
         $response['success'] = true;
 
-        $comments_query = "SELECT count(ID) As c FROM comment WHERE POSTID = ?";
+        $comments_query = "SELECT count(ID) As c FROM COMMENT WHERE POSTID = ?";
         $stmt_comment = $conn->prepare($comments_query);
         $stmt_comment->bind_param("i", $postId);
         $stmt_comment->execute();

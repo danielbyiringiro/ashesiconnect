@@ -15,7 +15,8 @@ session_start();
         <link href="../css/user_profile.css" rel="stylesheet"> 
         <title>User Profile</title>
         <script>
-
+            var commentsLoaded = false;
+            
             document.addEventListener('DOMContentLoaded', () =>
             {
                 const main = document.getElementById('main');

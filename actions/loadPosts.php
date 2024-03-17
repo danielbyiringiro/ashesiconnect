@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     
             $user_query = "SELECT * FROM USERS WHERE ID = ?";
             $vibes_query = "SELECT count(id) AS vibes FROM LIKES WHERE postId = ?";
-            $comments_query = "SELECT count(ID) AS comments FROM comment WHERE POSTID = ?";
+            $comments_query = "SELECT count(ID) AS comments FROM COMMENT WHERE POSTID = ?";
             $most_recent = "SELECT * FROM COMMENT WHERE POSTID = ? ORDER BY CREATED_AT DESC LIMIT 1";
     
             $stmt_mostrecent = $conn ->prepare($most_recent);
